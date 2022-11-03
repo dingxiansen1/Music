@@ -6,38 +6,40 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
-import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.dd.music.ui.theme.MusicTheme
+import com.dd.base.ui.theme.ComposeAppTheme
+import com.dd.base.ui.theme.Themem
+import com.dd.base.utils.WindowUtils
+import com.dd.music.navigator.NavController
+import com.dd.music.splash.SplashPage
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        //初始化window工具类
+        WindowUtils.Init(this)
         setContent {
-            MusicTheme {
+            ComposeAppTheme(themeType = Themem.themeTypeState.value) {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    Greeting("Android")
+                    //是否闪屏页
+                    var isSplash by remember { mutableStateOf(true) }
+                    if (isSplash) {
+                        WindowUtils.hideSystemUI()
+                        SplashPage{ isSplash = false }
+                    } else {
+                        WindowUtils.showSystemUI()
+                        NavController()
+                    }
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    MusicTheme {
-        Greeting("Android")
     }
 }
