@@ -1,10 +1,11 @@
 package com.dd.music.main
 
-import android.annotation.SuppressLint
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
@@ -12,7 +13,6 @@ import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.navigation.NavHostController
 import com.dd.base.ui.theme.AppTheme
 import com.dd.base.ui.theme.ComposeAppTheme
@@ -23,7 +23,6 @@ import com.dd.music.main.home.HomePage
 import com.dd.music.main.mine.MinePage
 
 @OptIn(ExperimentalAnimationApi::class)
-@SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
 fun MainPage(navCtrl: NavHostController) {
     val scaffoldState = rememberScaffoldState()
@@ -65,11 +64,13 @@ fun MainPage(navCtrl: NavHostController) {
             },
         ) {
             // 此处需要编写主界面
-            AnimatedContent(targetState = selectedItem) { targetState ->
-                when (targetState) {
-                    0 -> HomePage(navCtrl, scaffoldState = scaffoldState, scope = scope)
-                    1 -> FindPage(navCtrl, scaffoldState = scaffoldState, scope = scope)
-                    else -> MinePage(navCtrl, scaffoldState = scaffoldState, scope = scope)
+            Box(modifier = Modifier.padding(it)) {
+                AnimatedContent(targetState = selectedItem) { targetState ->
+                    when (targetState) {
+                        0 -> HomePage(navCtrl, scaffoldState = scaffoldState, scope = scope)
+                        1 -> FindPage(navCtrl, scaffoldState = scaffoldState, scope = scope)
+                        else -> MinePage(navCtrl, scaffoldState = scaffoldState, scope = scope)
+                    }
                 }
             }
         }
