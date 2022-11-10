@@ -16,7 +16,9 @@ import com.dd.base.ui.theme.Themem
 import com.dd.base.utils.WindowUtils
 import com.dd.music.navigator.NavController
 import com.dd.music.splash.SplashPage
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -27,7 +27,7 @@ data class Block(
     val canFeedback: Boolean,
     val creatives: List<Creative>,
     val dislikeShowType: Int,
-    val extInfo: ExtInfo,
+    val extInfo: ExtInfo?,
     val logInfo: String,
     val resourceIdList: List<String>,
     val showType: String,

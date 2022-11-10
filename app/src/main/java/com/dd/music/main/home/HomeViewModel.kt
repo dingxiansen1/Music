@@ -10,10 +10,13 @@ import com.dd.base.ext.launch
 import com.dd.music.Constant
 import com.dd.music.bean.HomeIconBean
 import com.dd.music.net.HttpService
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.async
+import javax.inject.Inject
 
 
-class HomeViewModel constructor(
+@HiltViewModel
+class HomeViewModel @Inject constructor(
     private var service: HttpService,
 ) : BaseViewModel() {
 
@@ -37,7 +40,7 @@ class HomeViewModel constructor(
             for (item in homeData.await()) {
                 when (item.showType) {
                     Constant.HOMEPAGE_BANNER -> {
-                        banner=item.extInfo.banners
+                        banner= item.extInfo?.banners!!
                     }
                     Constant.HOMEPAGE_SLIDE_PLAYLIST -> {
                         recommendPlay = item
