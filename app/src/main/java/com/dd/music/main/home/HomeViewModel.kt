@@ -2,6 +2,7 @@ package com.dd.music.main.home
 
 import Banner
 import Block
+import ExtInfo
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -12,6 +13,8 @@ import com.dd.music.bean.HomeIconBean
 import com.dd.music.net.HttpService
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.async
+import kotlinx.serialization.decodeFromString
+import kotlinx.serialization.json.Json
 import javax.inject.Inject
 
 
@@ -40,7 +43,7 @@ class HomeViewModel @Inject constructor(
             for (item in homeData.await()) {
                 when (item.showType) {
                     Constant.HOMEPAGE_BANNER -> {
-                        banner= item.extInfo?.banners!!
+                        banner= Json.decodeFromString<ExtInfo>(item.extInfo.toString()).banners
                     }
                     Constant.HOMEPAGE_SLIDE_PLAYLIST -> {
                         recommendPlay = item

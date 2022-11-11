@@ -1,3 +1,4 @@
+import kotlinx.serialization.Serializable
 
 data class HomePage(
     val blockCodeOrderList: Any,
@@ -13,10 +14,6 @@ data class HomePage(
     val titles: List<Any>
 )
 
-data class Trp(
-    val rules: List<String>
-)
-
 data class Block(
     val action: String,
     val actionType: String,
@@ -27,7 +24,7 @@ data class Block(
     val canFeedback: Boolean,
     val creatives: List<Creative>,
     val dislikeShowType: Int,
-    val extInfo: ExtInfo?,
+    val extInfo: Any?,
     val logInfo: String,
     val resourceIdList: List<String>,
     val showType: String,
@@ -64,9 +61,9 @@ data class Creative(
     val resources: List<Resource>,
     val uiElement: UiElementX
 )
-
+@Serializable
 data class ExtInfo(
-    val banners: List<Banner>
+    val banners: List<Banner>,
 )
 
 data class UiElementXX(
@@ -143,7 +140,7 @@ data class SubTitle(
     val titleId: String,
     val titleType: String
 )
-
+@Serializable
 data class Banner(
     val alg: String,
     val bannerBizType: String,
@@ -155,7 +152,6 @@ data class Banner(
     val s_ctrp: String,
     val scm: String,
     val showAdTag: Boolean,
-    val showContext: Any,
     val targetId: Int,
     val targetType: Int,
     val titleColor: String,

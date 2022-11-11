@@ -49,12 +49,17 @@ object Kotlin{
 object Jetpack{
    private const val lifecycle_version ="2.5.1"
    private const val datastore_version ="1.0.0"
+   private const val hilt_version ="2.44"
    const val lifecycle_runtime = "androidx.lifecycle:lifecycle-runtime-ktx:2.3.1"
    const val lifecycle_livedata = "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
    const val lifecycle_viewmodel= "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
    const val datastore_preferences= "androidx.datastore:datastore-preferences:$datastore_version"
    const val datastore_core= "androidx.datastore:datastore-core:$datastore_version"
    const val startup= "androidx.startup:startup-runtime:1.2.0-alpha01"
+
+   const val hilt= "com.google.dagger:hilt-android:$hilt_version"
+   const val hilt_kapt= "com.google.dagger:hilt-android-compiler:2.44$hilt_version"
+   const val hilt_navigation= "androidx.hilt:hilt-navigation-compose:1.0.0-alpha03"
 }
 
 object Compose{
@@ -69,11 +74,20 @@ object Compose{
 
 object Other{
    const val leakcanary = "com.squareup.leakcanary:leakcanary-android:2.9.1"
+
    private const val coil_version = "2.1.0"
    const val coil = "io.coil-kt:coil:$coil_version"
    const val coil_compose = "io.coil-kt:coil-compose:$coil_version"
    const val okhttp3 = "com.squareup.okhttp3:okhttp:4.10.0"
+
    private const val rxhttp_version = "2.9.3"
    const val rxhttp = "com.github.liujingxing.rxhttp:rxhttp:$rxhttp_version"
    const val rxhttp_compiler = "com.github.liujingxing.rxhttp:rxhttp-compiler:$rxhttp_version"
+
+   private const val retrofit2_version = "2.9.0"
+   const val retrofit = "com.squareup.retrofit2:retrofit:$retrofit2_version"
+   const val retrofit_gson = "com.squareup.retrofit2:converter-gson:$retrofit2_version"
+
+   const val serialization = "org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1"
+
 }
