@@ -58,7 +58,7 @@ object Jetpack{
    const val startup= "androidx.startup:startup-runtime:1.2.0-alpha01"
 
    const val hilt= "com.google.dagger:hilt-android:$hilt_version"
-   const val hilt_kapt= "com.google.dagger:hilt-android-compiler:2.44$hilt_version"
+   const val hilt_kapt= "com.google.dagger:hilt-android-compiler:$hilt_version"
    const val hilt_navigation= "androidx.hilt:hilt-navigation-compose:1.0.0-alpha03"
 }
 
