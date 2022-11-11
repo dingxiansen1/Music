@@ -42,9 +42,9 @@ class HomeViewModel @Inject constructor(
             var slidePlay: Block? = null
             for (item in homeData.await()) {
                 when (item.showType) {
-                    Constant.HOMEPAGE_BANNER -> {
+                   /* Constant.HOMEPAGE_BANNER -> {
                         banner= Json.decodeFromString<ExtInfo>(item.extInfo.toString()).banners
-                    }
+                    }*/
                     Constant.HOMEPAGE_SLIDE_PLAYLIST -> {
                         recommendPlay = item
                     }
