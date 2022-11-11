@@ -11,10 +11,10 @@ import com.dd.base.ext.launch
 import com.dd.music.Constant
 import com.dd.music.bean.HomeIconBean
 import com.dd.music.net.HttpService
+import com.dd.music.utils.JsonUtils.Companion.jsonDecoder
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.async
 import kotlinx.serialization.decodeFromString
-import kotlinx.serialization.json.Json
 import javax.inject.Inject
 
 
@@ -22,15 +22,15 @@ import javax.inject.Inject
 class HomeViewModel @Inject constructor(
     private var service: HttpService,
 ) : BaseViewModel() {
-
     var viewStates by mutableStateOf(HomeViewState(isRefreshing = false))
         private set
 
     init {
         getData()
     }
-    private fun getData(){
-        launch{
+
+    private fun getData() {
+        launch {
             val homeIcon = async {
                 service.getHomeIcon().data ?: emptyList()
             }
@@ -42,9 +42,10 @@ class HomeViewModel @Inject constructor(
             var slidePlay: Block? = null
             for (item in homeData.await()) {
                 when (item.showType) {
-                   /* Constant.HOMEPAGE_BANNER -> {
-                        banner= Json.decodeFromString<ExtInfo>(item.extInfo.toString()).banners
-                    }*/
+                    Constant.HOMEPAGE_BANNER -> {
+                        banner =
+                            jsonDecoder.decodeFromString<ExtInfo>(item.extInfo.toString()).banners
+                    }
                     Constant.HOMEPAGE_SLIDE_PLAYLIST -> {
                         recommendPlay = item
                     }
@@ -53,7 +54,7 @@ class HomeViewModel @Inject constructor(
                     }
                 }
             }
-            viewStates = HomeViewState(false,banner,homeIcon.await(),recommendPlay,slidePlay)
+            viewStates = HomeViewState(false, banner, homeIcon.await(), recommendPlay, slidePlay)
         }
     }
 }
