@@ -1,5 +1,8 @@
 package com.dd.music.bean
 
+import kotlinx.serialization.Serializable
+
+@Serializable
 data class HomeIconBean(
     val homepageMode: String,
     val iconUrl: String,

@@ -70,6 +70,11 @@ object Compose{
    const val ui_tooling = "androidx.compose.ui:ui-tooling:${compose_version}"
    const val ui_test_manifest = "androidx.compose.ui:ui-test-manifest:${compose_version}"
    const val navigation= "androidx.navigation:navigation-compose:2.6.0-alpha01"
+
+
+   private const val viewpaper_version = "0.25.0"
+   const val viewpager= "com.google.accompanist:accompanist-pager:${viewpaper_version}"
+   const val viewpager_indicators= "com.google.accompanist:accompanist-pager-indicators:${viewpaper_version}"
 }
 
 object Other{

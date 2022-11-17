@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.AsyncImage
 import com.dd.base.ui.theme.AppTheme
 import com.dd.base.ui.theme.ComposeAppTheme
@@ -22,7 +23,8 @@ import kotlinx.coroutines.delay
 
 @Composable
 fun SplashPage(onNextPage: () -> Unit) {
-
+    val viewModel: SplashViewModel = hiltViewModel()
+    viewModel.getData()
     ComposeAppTheme(themeType = Themem.themeTypeState.value) {
         var time by remember { mutableStateOf(3) }
         var isShowAD by remember { mutableStateOf(false) }

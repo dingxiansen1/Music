@@ -74,4 +74,8 @@ dependencies {
     implementation Jetpack.hilt_navigation
 
     implementation Other.serialization
+
+    //viewPager
+    implementation Compose.viewpager
+    implementation Compose.viewpager_indicators
 }
