@@ -3,12 +3,17 @@
 package com.dd.music.main.home
 
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.size
 import androidx.compose.material.ScaffoldState
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.dd.base.ext.isNotNull
 import com.dd.base.ext.showToast
+import com.dd.base.widget.SearchBar
 import com.dd.music.main.home.ui.SlidePlayView
 import com.dd.music.widget.Banner
 import com.google.accompanist.pager.ExperimentalPagerApi
@@ -25,15 +30,18 @@ fun HomePage(
     val viewStates = viewModel.viewStates
     val banners = viewStates.banner
     val slidePlay = viewStates.slidePlay
-    //推荐歌曲 showType = HOMEPAGE_SLIDE_SONGLIST_ALIGN
-
-    AnimatedVisibility (banners.isNotEmpty()) {
-        Banner(list = banners) { url, title ->
-            showToast("暂未开发$title")
+    Column(Modifier.fillMaxSize()) {
+        
+        SearchBar(hint = "周杰伦")
+        
+        AnimatedVisibility (banners.isNotEmpty()) {
+            Banner(list = banners) { url, title ->
+                showToast("暂未开发$title")
+            }
         }
-    }
-    AnimatedVisibility (slidePlay.isNotNull()) {
-        SlidePlayView(slidePlay!!)
+        AnimatedVisibility (slidePlay.isNotNull()) {
+            SlidePlayView(slidePlay!!)
+        }
     }
 }
 

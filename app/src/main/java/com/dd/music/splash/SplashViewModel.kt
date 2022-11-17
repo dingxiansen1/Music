@@ -42,7 +42,7 @@ class SplashViewModel @Inject constructor(
                     Constant.HOMEPAGE_BANNER -> {
                         LogUtils.d(item.extInfo)
                         banner =
-                            JsonUtils.jsonDecoder.decodeFromString<ExtInfo>(item.extInfo!!).banners
+                            JsonUtils.jsonDecoder.decodeFromString<ExtInfo>(item.extInfo.toString()).banners!!
                     }
                     Constant.HOMEPAGE_SLIDE_PLAYLIST -> {
                         recommendPlay = item

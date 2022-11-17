@@ -21,9 +21,9 @@ class HomeModel {
 
         fun getHomeData(): HomeViewState {
 
-            val string = DataStoreUtils.getSyncData(HOME_DATA, HomeViewState());
+            val string = DataStoreUtils.getSyncData(HOME_DATA,"");
 
-            return JsonUtils.jsonDecoder.decodeFromString(string.toString())
+            return JsonUtils.jsonDecoder.decodeFromString(string)
         }
     }
 

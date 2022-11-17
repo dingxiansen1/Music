@@ -75,7 +75,7 @@ fun SlidePlayView(slidePlay: Block) {
             .fillMaxWidth()
     ) {
         Text(
-            text = slidePlay.uiElement.subTitle.title,
+            text = slidePlay.uiElement?.subTitle?.title!!,
             fontSize = 18.sp,
             modifier = Modifier
                 .align(Alignment.CenterStart)
@@ -94,7 +94,7 @@ fun SlidePlayView(slidePlay: Block) {
                 )
                 .clip(RoundedCornerShape(50.sdp))
                 .clickable {
-                    showToast("暂未开发${slidePlay.uiElement.button.action}")
+                    showToast("暂未开发${slidePlay.uiElement?.button?.action}")
                 }
         ) {
             Text(
@@ -121,8 +121,8 @@ fun SlidePlayView(slidePlay: Block) {
             .fillMaxWidth()
     )
     LazyRow {
-        items(slidePlay.creatives.size) { index ->
-            HomeRecommendSongPage(slidePlay.creatives[index])
+        items(slidePlay.creatives!!.size) { index ->
+            HomeRecommendSongPage(slidePlay.creatives!![index])
         }
     }
 }
@@ -134,18 +134,18 @@ fun SlidePlayView(slidePlay: Block) {
 @Composable
 fun HomeRecommendSongPage(creative: Creative) {
     Column(Modifier.width(860.sdp)) {
-        for (item in creative.resources) {
+        for (item in creative.resources!!) {
             Row(Modifier.padding(20.sdp)) {
                 AsyncImage(
-                    model = item.uiElement.image.imageUrl,
-                    contentDescription = item.uiElement.mainTitle.title,
+                    model = item.uiElement.image?.imageUrl,
+                    contentDescription = item.uiElement.mainTitle?.title,
                     modifier = Modifier
                         .size(150.sdp)
                         .clip(shape = RoundedCornerShape(30.sdp)),
                     contentScale = ContentScale.Crop,
                 )
                 Text(
-                    text = item.uiElement.mainTitle.title,
+                    text = item.uiElement.mainTitle?.title ?:"",
                     fontSize = 16.sp,
                     modifier = Modifier
                         .padding(start = 20.sdp)
@@ -155,7 +155,7 @@ fun HomeRecommendSongPage(creative: Creative) {
                     style = TextStyle(color = AppTheme.colors.textPrimary)
                 )
                 Text(
-                    text = "-${item.resourceExtInfo.artists[0].name}",
+                    text = "-${item.resourceExtInfo.artists!![0].name}",
                     fontSize = 14.sp,
                     modifier = Modifier
                         .fillMaxWidth()

@@ -1,199 +1,199 @@
 import kotlinx.serialization.Serializable
 
 data class HomePage(
-    val blockCodeOrderList: Any,
-    val blockUUIDs: Any,
-    val blocks: List<Block>,
-    val cursor: String ?= "",
-    val demote: Boolean,
-    val exposedResource: String ?= "",
-    val guideToast: GuideToast,
-    val hasMore: Boolean,
-    val internalTest: Any,
-    val pageConfig: PageConfig,
-    val titles: List<Any>
+    var blockCodeOrderList: Any,
+    var blockUUIDs: Any,
+    var blocks: List<Block>,
+    var cursor: String? = "",
+    var demote: Boolean,
+    var exposedResource: String? = "",
+    var guideToast: GuideToast,
+    var hasMore: Boolean,
+    var internalTest: String? = "",
+    var pageConfig: PageConfig,
+    var titles:List<String>? = emptyList()
 )
 
 @Serializable
 data class Block(
-    val action: String ?= "",
-    val actionType: String ?= "",
-    val alg: String ?= "",
-    val blockCode: String ?= "",
-    val blockStyle: Int,
-    val canClose: Boolean,
-    val canFeedback: Boolean,
-    val creatives: List<Creative>,
-    val dislikeShowType: Int,
-    val extInfo: String? = "",
-    val logInfo: String ?= "",
-    val resourceIdList: List<String>,
-    val showType: String ?= "",
-    val uiElement: UiElementXX
+    var action: String? = "",
+    var actionType: String? = "",
+    var alg: String? = "",
+    var blockCode: String? = "",
+    var blockStyle: Int,
+    var canClose: Boolean,
+    var canFeedback: Boolean,
+    var creatives: List<Creative>? = emptyList(),
+    var dislikeShowType: Int,
+    var extInfo: String? = "",
+    var logInfo: String? = "",
+    var resourceIdList: List<String>? = emptyList(),
+    var showType: String? = "",
+    var uiElement: UiElementXX?=null
 )
 
 @Serializable
 data class ExtInfo(
-    val banners: List<Banner>,
+    var banners: List<Banner>? = emptyList(),
 )
 
 @Serializable
 data class Banner(
-    val alg: String ?= "",
-    val bannerBizType: String ?= "",
-    val bannerId: String ?= "",
-    val encodeId: String ?= "",
-    val exclusive: Boolean,
-    val pic: String = "",
-    val requestId: String ?= "",
-    val s_ctrp: String ?= "",
-    val scm: String ?= "",
-    val showAdTag: Boolean,
-    val targetId: Long,
-    val targetType: Int,
-    val titleColor: String ?= "",
-    val typeTitle: String = "",
-    val url: String ?= "",
-    val video: String ?= ""
+    var alg: String? = "",
+    var bannerBizType: String? = "",
+    var bannerId: String? = "",
+    var encodeId: String? = "",
+    var exclusive: Boolean,
+    var pic: String = "",
+    var requestId: String? = "",
+    var s_ctrp: String? = "",
+    var scm: String? = "",
+    var showAdTag: Boolean,
+    var targetId: Long,
+    var targetType: Int,
+    var titleColor: String? = "",
+    var typeTitle: String = "",
+    var url: String? = "",
+    var video: String? = ""
 )
 
 data class GuideToast(
-    val hasGuideToast: Boolean,
-    val toastList: List<Any>
+    var hasGuideToast: Boolean,
+    var toastList: List<String>? = emptyList()
 )
 
 data class PageConfig(
-    val abtest: List<String>,
-    val fullscreen: Boolean,
-    val homepageMode: String ?= "",
-    val nodataToast: String ?= "",
-    val orderInfo: String ?= "",
-    val refreshInterval: Int,
-    val refreshToast: String ?= "",
-    val showModeEntry: Boolean,
-    val songLabelMarkLimit: Int,
-    val songLabelMarkPriority: List<String>,
-    val title: Any
+    var abtest: List<String>? = emptyList(),
+    var fullscreen: Boolean,
+    var homepageMode: String? = "",
+    var nodataToast: String? = "",
+    var orderInfo: String? = "",
+    var refreshIntervar: Int,
+    var refreshToast: String? = "",
+    var showModeEntry: Boolean,
+    var songLabelMarkLimit: Int,
+    var songLabelMarkPriority: List<String>? = emptyList(),
+    var title: Any
 )
 
 @Serializable
 data class Creative(
-    val action: String ?= "",
-    val actionType: String ?= "",
-    val alg: String ?= "",
-    val creativeId: String ?= "",
-    val creativeType: String ?= "",
-    val logInfo: String ?= "",
-    val position: Int,
-    val resources: List<Resource>,
-    val uiElement: UiElementX
+    var action: String? = "",
+    var actionType: String? = "",
+    var alg: String? = "",
+    var creativeId: String? = "",
+    var creativeType: String? = "",
+    var logInfo: String? = "",
+    var position: Int,
+    var resources: List<Resource>? = emptyList(),
+    var uiElement: UiElementX?
 )
 
 
 @Serializable
 data class UiElementXX(
-    val button: Button,
-    val rcmdShowType: String ?= "",
-    val subTitle: SubTitleX
+    var button: Button?,
+    var rcmdShowType: String? = "",
+    var subTitle: SubTitleX?
 )
 
 @Serializable
 data class Resource(
-    val action: String ?= "",
-    val actionType: String ?= "",
-    val alg: String ?= "",
-    val ctrp: String ?= "",
-    val likedCount: String ?= "",
-    val logInfo: String ?= "",
-    val replyCount: String ?= "",
-    val resourceContentList: String ?= "",
-    val resourceExtInfo: ResourceExtInfo,
-    val resourceId: String ?= "",
-    val resourceState: String ?= "",
-    val resourceType: String ?= "",
-    val resourceUrl: String ?= "",
-    val uiElement: UiElement,
-    val valid: Boolean
+    var action: String? = "",
+    var actionType: String? = "",
+    var alg: String? = "",
+    var ctrp: String? = "",
+    var likedCount: String? = "",
+    var logInfo: String? = "",
+    var replyCount: String? = "",
+    var resourceContentList: String? = "",
+    var resourceExtInfo: ResourceExtInfo,
+    var resourceId: String? = "",
+    var resourceState: String? = "",
+    var resourceType: String? = "",
+    var resourceUrl: String? = "",
+    var uiElement: UiElement,
+    var varid: Boolean
 )
 
 @Serializable
 data class UiElementX(
-    val image: ImageX,
-    val labelTexts: List<String>,
-    val mainTitle: MainTitleX,
-    val rcmdShowType: String ?= ""
+    var image: ImageX?,
+    var labelTexts: List<String>? = emptyList(),
+    var mainTitle: MainTitleX?,
+    var rcmdShowType: String? = ""
 )
 
 @Serializable
 data class ResourceExtInfo(
-    val artists: List<Artist>,
-    val highQuality: Boolean,
-    val playCount: Int,
-    val specialType: Int
+    var artists: List<Artist>? = emptyList(),
+    var highQuality: Boolean,
+    var playCount: Int,
+    var specialType: Int
 )
 
 @Serializable
 data class UiElement(
-    val image: Image,
-    val labelTexts: List<String>,
-    val mainTitle: MainTitle,
-    val rcmdShowType: String ?= "",
-    val subTitle: SubTitle
+    var image: Image?,
+    var labelTexts: List<String>? = emptyList(),
+    var mainTitle: MainTitle?,
+    var rcmdShowType: String? = "",
+    var subTitle: SubTitle?
 )
 
 @Serializable
 data class Artist(
-    val albumSize: Int,
-    val alias: List<String>,
-    val briefDesc: String ?= "",
-    val id: Int,
-    val img1v1Id: Int,
-    val img1v1Url: String ?= "",
-    val musicSize: Int,
-    val name: String ?= "",
-    val picId: Int,
-    val picUrl: String ?= "",
-    val topicPerson: Int,
-    val trans: String ?= ""
+    var albumSize: Int,
+    var alias: List<String>? = emptyList(),
+    var briefDesc: String? = "",
+    var id: Int,
+    var img1v1Id: Int,
+    var img1v1Url: String? = "",
+    var musicSize: Int,
+    var name: String? = "",
+    var picId: Int,
+    var picUrl: String? = "",
+    var topicPerson: Int,
+    var trans: String? = ""
 )
 
 @Serializable
 data class Image(
-    val imageUrl: String ?= ""
+    var imageUrl: String? = ""
 )
 
 @Serializable
 data class MainTitle(
-    val title: String = ""
+    var title: String = ""
 )
 
 @Serializable
 data class SubTitle(
-    val title: String ?= "",
-    val titleId: String ?= "",
-    val titleType: String ?= ""
+    var title: String? = "",
+    var titleId: String? = "",
+    var titleType: String? = ""
 )
 
 @Serializable
 data class ImageX(
-    val imageUrl: String ?= ""
+    var imageUrl: String? = ""
 )
 
 @Serializable
 data class MainTitleX(
-    val title: String ?= ""
+    var title: String? = ""
 )
 
 @Serializable
 data class Button(
-    val action: String ?= "",
-    val actionType: String ?= "",
-    val biData: String ?= "",
-    val iconUrl: String ?= "",
-    val text: String ?= ""
+    var action: String? = "",
+    var actionType: String? = "",
+    var biData: String? = "",
+    var iconUrl: String? = "",
+    var text: String? = ""
 )
 
 @Serializable
 data class SubTitleX(
-    val title: String = ""
+    var title: String = ""
 )
