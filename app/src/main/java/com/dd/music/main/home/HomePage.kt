@@ -13,7 +13,6 @@ import androidx.navigation.NavHostController
 import com.dd.base.ext.isNotNull
 import com.dd.base.ext.showToast
 import com.dd.base.utils.sdp
-import com.dd.base.widget.SearchBar
 import com.dd.base.widget.SearchBarNotClickable
 import com.dd.music.main.home.ui.HomeIconPage
 import com.dd.music.main.home.ui.RecommendPlayView
@@ -64,6 +63,7 @@ fun HomePage(
         AnimatedVisibility(slidePlay.isNotNull()) {
             SlidePlayView(slidePlay!!)
         }
+
     }
 }
 
