@@ -59,17 +59,17 @@ object Jetpack{
 
    const val hilt= "com.google.dagger:hilt-android:$hilt_version"
    const val hilt_kapt= "com.google.dagger:hilt-android-compiler:$hilt_version"
-   const val hilt_navigation= "androidx.hilt:hilt-navigation-compose:1.0.0-alpha03"
+   const val hilt_navigation= "androidx.hilt:hilt-navigation-compose:1.0.0"
 }
 
 object Compose{
-   const val activity = "androidx.activity:activity-compose"
-   const val ui = "androidx.compose.ui:ui"
-   const val material = "androidx.compose.material:material"
-   const val ui_tooling_preview = "androidx.compose.ui:ui-tooling-preview"
-   const val ui_tooling = "androidx.compose.ui:ui-tooling"
-   const val ui_test_manifest = "androidx.compose.ui:ui-test-manifest"
-   const val navigation= "androidx.navigation:navigation-compose"
+   const val activity = "androidx.activity:activity-compose:1.3.1"
+   const val ui = "androidx.compose.ui:ui:${compose_version}"
+   const val material = "androidx.compose.material:material:${compose_version}"
+   const val ui_tooling_preview = "androidx.compose.ui:ui-tooling-preview:${compose_version}"
+   const val ui_tooling = "androidx.compose.ui:ui-tooling:${compose_version}"
+   const val ui_test_manifest = "androidx.compose.ui:ui-test-manifest:${compose_version}"
+   const val navigation= "androidx.navigation:navigation-compose:2.6.0-alpha01"
 
 
    private const val viewpaper_version = "0.25.0"
