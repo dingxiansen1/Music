@@ -25,7 +25,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import com.dd.base.ext.showToast
-import com.dd.base.ui.theme.AppTheme
+import com.dd.base.theme.AppTheme
 import com.dd.base.utils.sdp
 import com.dd.music.R
 import com.dd.music.bean.HomeIconBean

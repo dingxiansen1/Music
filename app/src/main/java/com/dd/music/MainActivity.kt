@@ -11,8 +11,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import com.dd.base.ui.theme.ComposeAppTheme
-import com.dd.base.ui.theme.Themem
+import com.dd.base.theme.ComposeAppTheme
+import com.dd.base.theme.Themem
 import com.dd.base.utils.WindowUtils
 import com.dd.music.navigator.NavController
 import com.dd.music.splash.SplashPage

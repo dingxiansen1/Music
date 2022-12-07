@@ -15,9 +15,9 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.AsyncImage
-import com.dd.base.ui.theme.AppTheme
-import com.dd.base.ui.theme.ComposeAppTheme
-import com.dd.base.ui.theme.Themem
+import com.dd.base.theme.AppTheme
+import com.dd.base.theme.ComposeAppTheme
+import com.dd.base.theme.Themem
 import com.dd.music.R
 import kotlinx.coroutines.delay
 

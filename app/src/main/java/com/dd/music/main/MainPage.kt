@@ -14,9 +14,9 @@ import androidx.compose.material.icons.filled.Person
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
-import com.dd.base.ui.theme.AppTheme
-import com.dd.base.ui.theme.ComposeAppTheme
-import com.dd.base.ui.theme.Themem
+import com.dd.base.theme.AppTheme
+import com.dd.base.theme.ComposeAppTheme
+import com.dd.base.theme.Themem
 import com.dd.base.utils.sdp
 import com.dd.music.main.find.FindPage
 import com.dd.music.main.home.HomePage
